@@ -79,8 +79,8 @@ def daily_reports(file):
                     td."{column}" as deaths,
                     tr."{column}" as recovered
                 FROM time_series_19_covid_Confirmed tc
-                LEFT JOIN time_series_19_covid_Deaths td ON tc.province_state = td.province_state AND tc.country_region = td.country_region
-                LEFT JOIN time_series_19_covid_Recovered tr ON tc.province_state = tr.province_state AND tc.country_region = tr.country_region;
+                LEFT JOIN time_series_19_covid_Deaths td ON tc.country_region = td.country_region AND (tc.province_state = td.province_state OR tc.province_state is NULL)
+                LEFT JOIN time_series_19_covid_Recovered tr ON tc.country_region = tr.country_region AND (tc.province_state = tr.province_state OR tc.province_state is NULL);
                 \n
                 """.format(column=column))
 
