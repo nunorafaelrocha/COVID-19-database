@@ -3,6 +3,7 @@ set -e
 set -x
 
 rm -rf /tmp/COVID-19
+rm -rf /tmp/initdb.sql
 
 git clone https://github.com/CSSEGISandData/COVID-19.git /tmp/COVID-19
 
