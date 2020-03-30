@@ -9,7 +9,7 @@ from slugify import slugify
 data_source_repo = "/tmp/COVID-19"
 
 # data types
-types = ["confirmed", "deaths"]
+types = ["confirmed", "deaths", "recovered"]
 
 # slug util
 def slug(text):
